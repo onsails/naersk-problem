@@ -14,6 +14,9 @@
       in {
 
         defaultPackage = naersk-lib.buildPackage {
+          buildInputs = with pkgs.darwin.apple_sdk.frameworks; [
+            CoreFoundation
+          ];
           root = ./.;
         };
         
